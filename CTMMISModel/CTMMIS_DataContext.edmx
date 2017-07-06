@@ -1,0 +1,631 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CTMMISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="t_Case_Main">
+          <Key>
+            <PropertyRef Name="RootId" />
+          </Key>
+          <Property Name="RootId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyNum" Type="varchar" MaxLength="100" />
+          <Property Name="BranchNum" Type="varchar" MaxLength="100" />
+          <Property Name="CaseNum" Type="varchar" MaxLength="100" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="SerialNum" Type="varchar" MaxLength="50" />
+          <Property Name="OrgName" Type="varchar" MaxLength="50" />
+          <Property Name="FullAddress" Type="varchar" MaxLength="500" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="ChangeDate" Type="datetime" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="CaseFlag" Type="int" />
+          <Property Name="recording_time" Type="datetime" />
+          <Property Name="updated_time" Type="datetime" />
+          <Property Name="PropertyName" Type="varchar" MaxLength="100" />
+          <Property Name="OrgId" Type="varchar" MaxLength="20" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="CommissionDate" Type="datetime" />
+          <Property Name="RecordNum" Type="varchar" MaxLength="100" />
+          <Property Name="NewProperty" Type="varchar" MaxLength="50" />
+          <Property Name="NewAnJieMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="NPDateTime" Type="datetime" />
+          <Property Name="IsFromFirst" Type="int" Nullable="false" />
+          <Property Name="isGSP" Type="int" />
+          <Property Name="ExchangeType" Type="varchar" MaxLength="50" />
+          <Property Name="IsNewHome" Type="int" />
+          <Property Name="MainUser_Name" Type="varchar" MaxLength="100" />
+          <Property Name="MainUser_ID" Type="varchar" MaxLength="100" />
+          <Property Name="MainUser_Code" Type="varchar" MaxLength="100" />
+          <Property Name="MainOrg_Name" Type="varchar" MaxLength="100" />
+          <Property Name="MainOrg_ID" Type="varchar" MaxLength="100" />
+          <Property Name="MainOrg_Code" Type="varchar" MaxLength="100" />
+          <Property Name="SourceFlag" Type="varchar" MaxLength="50" />
+          <Property Name="Delegation_Code" Type="varchar" MaxLength="100" />
+          <Property Name="IsSpecialCase" Type="varchar" MaxLength="10" />
+          <Property Name="OrgIdA" Type="varchar" MaxLength="100" />
+          <Property Name="EarnestDate" Type="datetime" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="BUSISH_ID" Type="varchar" MaxLength="50" />
+          <Property Name="BUSIAR_ID" Type="varchar" MaxLength="50" />
+          <Property Name="BUSISWZ_ID" Type="varchar" MaxLength="50" />
+          <Property Name="BUSIWZ_ID" Type="varchar" MaxLength="50" />
+          <Property Name="BUSIBA_ID" Type="varchar" MaxLength="50" />
+          <Property Name="ChangeNum" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_Flow_Base">
+          <Key>
+            <PropertyRef Name="WfmId" />
+          </Key>
+          <Property Name="RootId" Type="varchar" MaxLength="100" />
+          <Property Name="WfmId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FlowName" Type="varchar" MaxLength="50" />
+          <Property Name="FlowTime" Type="datetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="SerialNum" Type="varchar" MaxLength="50" />
+          <Property Name="OrgName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="100" />
+          <Property Name="FirstStepTime" Type="datetime" />
+          <Property Name="AuditedTime" Type="datetime" />
+          <Property Name="OutDeptTime" Type="datetime" />
+          <Property Name="BalanceUseTime" Type="datetime" />
+          <Property Name="CWFirstTime" Type="datetime" />
+          <Property Name="CWSecondTime" Type="datetime" />
+          <Property Name="FWFirstTime" Type="datetime" />
+          <Property Name="FWSecondTime" Type="datetime" />
+          <Property Name="FinishTime" Type="datetime" />
+          <Property Name="BalanceTime" Type="datetime" />
+          <Property Name="FlowFlag" Type="int" />
+          <Property Name="recording_time" Type="datetime" />
+          <Property Name="updated_time" Type="datetime" />
+          <Property Name="OrgId" Type="varchar" MaxLength="100" />
+          <Property Name="FinishUserId" Type="varchar" MaxLength="50" />
+          <Property Name="FinishUserName" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="varchar" MaxLength="50" />
+          <Property Name="FinishIdea" Type="varchar" MaxLength="500" />
+          <Property Name="CWFirstUserId" Type="varchar" MaxLength="50" />
+          <Property Name="CWSecondUserId" Type="varchar" MaxLength="50" />
+          <Property Name="FWFirstUserId" Type="varchar" MaxLength="50" />
+          <Property Name="FWSecondUserId" Type="varchar" MaxLength="50" />
+          <Property Name="FlowId" Type="int" />
+          <Property Name="NewAgencyPushFlag" Type="int" />
+          <Property Name="IsYCFlowFlag" Type="int" />
+          <Property Name="CurstatusName" Type="varchar" MaxLength="100" />
+          <Property Name="CurstatusID" Type="varchar" MaxLength="100" />
+          <Property Name="IsSpecialCase" Type="int" />
+          <Property Name="ProcessKey" Type="varchar" MaxLength="100" />
+          <Property Name="CreateUserName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="t_Flow_Trade">
+          <Key>
+            <PropertyRef Name="TradeId" />
+          </Key>
+          <Property Name="TradeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RootId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WfmId" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TradeType" Type="varchar" MaxLength="50" />
+          <Property Name="Property" Type="varchar" MaxLength="50" />
+          <Property Name="PriceType" Type="varchar" MaxLength="50" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="GotMoneyType" Type="varchar" MaxLength="50" />
+          <Property Name="GotMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="CompactDate" Type="datetime" />
+          <Property Name="ClientCommType" Type="varchar" MaxLength="50" />
+          <Property Name="ClientComm" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ClientPreDate" Type="datetime" />
+          <Property Name="HostCommType" Type="varchar" MaxLength="50" />
+          <Property Name="HostComm" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="HostPreDate" Type="datetime" />
+          <Property Name="NonCorpIncomeType" Type="varchar" MaxLength="50" />
+          <Property Name="NonCorpIncome" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType" Type="varchar" MaxLength="50" />
+          <Property Name="RealPayout" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="CorpIncomeType" Type="varchar" MaxLength="50" />
+          <Property Name="CorpIncome" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TaxType" Type="varchar" MaxLength="50" />
+          <Property Name="Tax" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Discount" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="AnJieMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="LawMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="StateFlag" Type="int" />
+          <Property Name="recording_time" Type="datetime" />
+          <Property Name="updated_time" Type="datetime" />
+          <Property Name="OverType" Type="varchar" MaxLength="100" />
+          <Property Name="OverMoneyType" Type="varchar" MaxLength="50" />
+          <Property Name="OverMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="ChangeCause" Type="varchar(max)" />
+          <Property Name="discountCause" Type="varchar(max)" />
+          <Property Name="NonCorpIncomeType2" Type="varchar" MaxLength="50" />
+          <Property Name="NonCorpIncome2" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType2" Type="varchar" MaxLength="50" />
+          <Property Name="RealPayout2" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="Tax2" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TaxType2" Type="varchar" MaxLength="50" />
+          <Property Name="NonCorpIncomeType3" Type="varchar" MaxLength="50" />
+          <Property Name="NonCorpIncome3" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType3" Type="varchar" MaxLength="50" />
+          <Property Name="RealPayout3" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TaxType3" Type="varchar" MaxLength="50" />
+          <Property Name="Tax3" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="CooprateAmount" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="CooprateType" Type="varchar" MaxLength="50" />
+          <Property Name="ZJAmount" Type="numeric" Precision="18" Scale="6" />
+          <Property Name="ZJType" Type="varchar" MaxLength="50" />
+          <Property Name="cashRule" Type="varchar" MaxLength="200" />
+          <Property Name="cashAmount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="areaDirector" Type="varchar" MaxLength="50" />
+          <Property Name="ChangeType" Type="varchar" MaxLength="200" />
+          <Property Name="PRootid" Type="varchar" MaxLength="50" />
+          <Property Name="IsNew" Type="int" />
+          <Property Name="ZPriceType" Type="varchar" MaxLength="30" />
+          <Property Name="ZPrice" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="IsLast" Type="int" />
+          <Property Name="IsRpt" Type="int" />
+          <Property Name="IsClear" Type="int" />
+          <Property Name="IsNewHome" Type="int" />
+          <Property Name="ContractType" Type="varchar" MaxLength="50" />
+          <Property Name="EarnestDate" Type="datetime" />
+          <Property Name="JuJian" Type="int" />
+          <Property Name="JuJianCode" Type="varchar" MaxLength="100" />
+          <Property Name="NoJuJianReason" Type="varchar" MaxLength="100" />
+          <Property Name="mandate" Type="int" />
+          <Property Name="ConnectFile" Type="int" />
+          <Property Name="YSHouse" Type="int" />
+          <Property Name="ConnectDate" Type="datetime" />
+          <Property Name="CertifeDate" Type="datetime" />
+          <Property Name="CommMoney" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="AnJieMoneyRate" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TotalPercent" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TotalNum" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TotalComm" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TotalAchive" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="TotalCommPercent" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="HostCommChange" Type="varchar" MaxLength="50" />
+          <Property Name="ClientCommChange" Type="varchar" MaxLength="50" />
+          <Property Name="DiscountChange" Type="varchar" MaxLength="50" />
+          <Property Name="CommMoneyChange" Type="varchar" MaxLength="50" />
+          <Property Name="CorpIncomeChange" Type="varchar" MaxLength="50" />
+          <Property Name="AnJieMoneyChange" Type="varchar" MaxLength="50" />
+          <Property Name="AnJieMoneyRateChange" Type="varchar" MaxLength="50" />
+          <Property Name="ZYReason" Type="varchar" MaxLength="100" />
+          <Property Name="ContractPer" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="PercentChange" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="IsLock" Type="int" />
+        </EntityType>
+        <EntityContainer Name="CTMMISModelStoreContainer">
+          <EntitySet Name="t_Case_Main" EntityType="Self.t_Case_Main" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_Flow_Base" EntityType="Self.t_Flow_Base" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_Flow_Trade" EntityType="Self.t_Flow_Trade" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CTMMISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="t_Case_Main">
+          <Key>
+            <PropertyRef Name="RootId" />
+          </Key>
+          <Property Name="RootId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompanyNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BranchNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CaseNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SerialNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FullAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="ChangeDate" Type="DateTime" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="CaseFlag" Type="Int32" />
+          <Property Name="recording_time" Type="DateTime" Precision="3" />
+          <Property Name="updated_time" Type="DateTime" Precision="3" />
+          <Property Name="PropertyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrgId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommissionDate" Type="DateTime" Precision="3" />
+          <Property Name="RecordNum" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NewProperty" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NewAnJieMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="NPDateTime" Type="DateTime" Precision="3" />
+          <Property Name="IsFromFirst" Type="Int32" Nullable="false" />
+          <Property Name="isGSP" Type="Int32" />
+          <Property Name="ExchangeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsNewHome" Type="Int32" />
+          <Property Name="MainUser_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MainUser_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MainUser_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MainOrg_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MainOrg_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MainOrg_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SourceFlag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Delegation_Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsSpecialCase" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="OrgIdA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EarnestDate" Type="DateTime" Precision="3" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="BUSISH_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUSIAR_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUSISWZ_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUSIWZ_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUSIBA_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChangeNum" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="t_Flow_Base">
+          <Key>
+            <PropertyRef Name="WfmId" />
+          </Key>
+          <Property Name="RootId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WfmId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FlowName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlowTime" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SerialNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrgName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateUser" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FirstStepTime" Type="DateTime" Precision="3" />
+          <Property Name="AuditedTime" Type="DateTime" Precision="3" />
+          <Property Name="OutDeptTime" Type="DateTime" Precision="3" />
+          <Property Name="BalanceUseTime" Type="DateTime" Precision="3" />
+          <Property Name="CWFirstTime" Type="DateTime" Precision="3" />
+          <Property Name="CWSecondTime" Type="DateTime" Precision="3" />
+          <Property Name="FWFirstTime" Type="DateTime" Precision="3" />
+          <Property Name="FWSecondTime" Type="DateTime" Precision="3" />
+          <Property Name="FinishTime" Type="DateTime" Precision="3" />
+          <Property Name="BalanceTime" Type="DateTime" Precision="3" />
+          <Property Name="FlowFlag" Type="Int32" />
+          <Property Name="recording_time" Type="DateTime" Precision="3" />
+          <Property Name="updated_time" Type="DateTime" Precision="3" />
+          <Property Name="OrgId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FinishUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FinishUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FinishIdea" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CWFirstUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CWSecondUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FWFirstUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FWSecondUserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FlowId" Type="Int32" />
+          <Property Name="NewAgencyPushFlag" Type="Int32" />
+          <Property Name="IsYCFlowFlag" Type="Int32" />
+          <Property Name="CurstatusName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CurstatusID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsSpecialCase" Type="Int32" />
+          <Property Name="ProcessKey" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="t_Flow_Trade">
+          <Key>
+            <PropertyRef Name="TradeId" />
+          </Key>
+          <Property Name="TradeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RootId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WfmId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TradeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Property" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PriceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="GotMoneyType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GotMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="CompactDate" Type="DateTime" Precision="3" />
+          <Property Name="ClientCommType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientComm" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ClientPreDate" Type="DateTime" Precision="3" />
+          <Property Name="HostCommType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HostComm" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="HostPreDate" Type="DateTime" Precision="3" />
+          <Property Name="NonCorpIncomeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NonCorpIncome" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RealPayout" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="CorpIncomeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CorpIncome" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TaxType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tax" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="AnJieMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="LawMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="StateFlag" Type="Int32" />
+          <Property Name="recording_time" Type="DateTime" Precision="3" />
+          <Property Name="updated_time" Type="DateTime" Precision="3" />
+          <Property Name="OverType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OverMoneyType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ChangeCause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="discountCause" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NonCorpIncomeType2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NonCorpIncome2" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RealPayout2" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Tax2" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TaxType2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NonCorpIncomeType3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NonCorpIncome3" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="RealPayoutType3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RealPayout3" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TaxType3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tax3" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="CooprateAmount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="CooprateType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZJAmount" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="ZJType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cashRule" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="cashAmount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="areaDirector" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChangeType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PRootid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsNew" Type="Int32" />
+          <Property Name="ZPriceType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ZPrice" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IsLast" Type="Int32" />
+          <Property Name="IsRpt" Type="Int32" />
+          <Property Name="IsClear" Type="Int32" />
+          <Property Name="IsNewHome" Type="Int32" />
+          <Property Name="ContractType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EarnestDate" Type="DateTime" Precision="3" />
+          <Property Name="JuJian" Type="Int32" />
+          <Property Name="JuJianCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NoJuJianReason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="mandate" Type="Int32" />
+          <Property Name="ConnectFile" Type="Int32" />
+          <Property Name="YSHouse" Type="Int32" />
+          <Property Name="ConnectDate" Type="DateTime" Precision="3" />
+          <Property Name="CertifeDate" Type="DateTime" Precision="3" />
+          <Property Name="CommMoney" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="AnJieMoneyRate" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalPercent" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalNum" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalComm" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalAchive" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="TotalCommPercent" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="HostCommChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ClientCommChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiscountChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CommMoneyChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CorpIncomeChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnJieMoneyChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnJieMoneyRateChange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ZYReason" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContractPer" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PercentChange" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IsLock" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="CTMMIS_Entity" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="t_Case_Main" EntityType="Self.t_Case_Main" />
+          <EntitySet Name="t_Flow_Base" EntityType="Self.t_Flow_Base" />
+          <EntitySet Name="t_Flow_Trade" EntityType="Self.t_Flow_Trade" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CTMMISModelStoreContainer" CdmEntityContainer="CTMMIS_Entity">
+          <EntitySetMapping Name="t_Case_Main">
+            <EntityTypeMapping TypeName="CTMMISModel.t_Case_Main">
+              <MappingFragment StoreEntitySet="t_Case_Main">
+                <ScalarProperty Name="RootId" ColumnName="RootId" />
+                <ScalarProperty Name="CompanyNum" ColumnName="CompanyNum" />
+                <ScalarProperty Name="BranchNum" ColumnName="BranchNum" />
+                <ScalarProperty Name="CaseNum" ColumnName="CaseNum" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ChangeDate" ColumnName="ChangeDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="CaseFlag" ColumnName="CaseFlag" />
+                <ScalarProperty Name="recording_time" ColumnName="recording_time" />
+                <ScalarProperty Name="updated_time" ColumnName="updated_time" />
+                <ScalarProperty Name="PropertyName" ColumnName="PropertyName" />
+                <ScalarProperty Name="OrgId" ColumnName="OrgId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CommissionDate" ColumnName="CommissionDate" />
+                <ScalarProperty Name="RecordNum" ColumnName="RecordNum" />
+                <ScalarProperty Name="NewProperty" ColumnName="NewProperty" />
+                <ScalarProperty Name="NewAnJieMoney" ColumnName="NewAnJieMoney" />
+                <ScalarProperty Name="NPDateTime" ColumnName="NPDateTime" />
+                <ScalarProperty Name="IsFromFirst" ColumnName="IsFromFirst" />
+                <ScalarProperty Name="isGSP" ColumnName="isGSP" />
+                <ScalarProperty Name="ExchangeType" ColumnName="ExchangeType" />
+                <ScalarProperty Name="IsNewHome" ColumnName="IsNewHome" />
+                <ScalarProperty Name="MainUser_Name" ColumnName="MainUser_Name" />
+                <ScalarProperty Name="MainUser_ID" ColumnName="MainUser_ID" />
+                <ScalarProperty Name="MainUser_Code" ColumnName="MainUser_Code" />
+                <ScalarProperty Name="MainOrg_Name" ColumnName="MainOrg_Name" />
+                <ScalarProperty Name="MainOrg_ID" ColumnName="MainOrg_ID" />
+                <ScalarProperty Name="MainOrg_Code" ColumnName="MainOrg_Code" />
+                <ScalarProperty Name="SourceFlag" ColumnName="SourceFlag" />
+                <ScalarProperty Name="Delegation_Code" ColumnName="Delegation_Code" />
+                <ScalarProperty Name="IsSpecialCase" ColumnName="IsSpecialCase" />
+                <ScalarProperty Name="OrgIdA" ColumnName="OrgIdA" />
+                <ScalarProperty Name="EarnestDate" ColumnName="EarnestDate" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="BUSISH_ID" ColumnName="BUSISH_ID" />
+                <ScalarProperty Name="BUSIAR_ID" ColumnName="BUSIAR_ID" />
+                <ScalarProperty Name="BUSISWZ_ID" ColumnName="BUSISWZ_ID" />
+                <ScalarProperty Name="BUSIWZ_ID" ColumnName="BUSIWZ_ID" />
+                <ScalarProperty Name="BUSIBA_ID" ColumnName="BUSIBA_ID" />
+                <ScalarProperty Name="ChangeNum" ColumnName="ChangeNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_Flow_Base">
+            <EntityTypeMapping TypeName="CTMMISModel.t_Flow_Base">
+              <MappingFragment StoreEntitySet="t_Flow_Base">
+                <ScalarProperty Name="RootId" ColumnName="RootId" />
+                <ScalarProperty Name="WfmId" ColumnName="WfmId" />
+                <ScalarProperty Name="FlowName" ColumnName="FlowName" />
+                <ScalarProperty Name="FlowTime" ColumnName="FlowTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SerialNum" ColumnName="SerialNum" />
+                <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="FirstStepTime" ColumnName="FirstStepTime" />
+                <ScalarProperty Name="AuditedTime" ColumnName="AuditedTime" />
+                <ScalarProperty Name="OutDeptTime" ColumnName="OutDeptTime" />
+                <ScalarProperty Name="BalanceUseTime" ColumnName="BalanceUseTime" />
+                <ScalarProperty Name="CWFirstTime" ColumnName="CWFirstTime" />
+                <ScalarProperty Name="CWSecondTime" ColumnName="CWSecondTime" />
+                <ScalarProperty Name="FWFirstTime" ColumnName="FWFirstTime" />
+                <ScalarProperty Name="FWSecondTime" ColumnName="FWSecondTime" />
+                <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+                <ScalarProperty Name="BalanceTime" ColumnName="BalanceTime" />
+                <ScalarProperty Name="FlowFlag" ColumnName="FlowFlag" />
+                <ScalarProperty Name="recording_time" ColumnName="recording_time" />
+                <ScalarProperty Name="updated_time" ColumnName="updated_time" />
+                <ScalarProperty Name="OrgId" ColumnName="OrgId" />
+                <ScalarProperty Name="FinishUserId" ColumnName="FinishUserId" />
+                <ScalarProperty Name="FinishUserName" ColumnName="FinishUserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FinishIdea" ColumnName="FinishIdea" />
+                <ScalarProperty Name="CWFirstUserId" ColumnName="CWFirstUserId" />
+                <ScalarProperty Name="CWSecondUserId" ColumnName="CWSecondUserId" />
+                <ScalarProperty Name="FWFirstUserId" ColumnName="FWFirstUserId" />
+                <ScalarProperty Name="FWSecondUserId" ColumnName="FWSecondUserId" />
+                <ScalarProperty Name="FlowId" ColumnName="FlowId" />
+                <ScalarProperty Name="NewAgencyPushFlag" ColumnName="NewAgencyPushFlag" />
+                <ScalarProperty Name="IsYCFlowFlag" ColumnName="IsYCFlowFlag" />
+                <ScalarProperty Name="CurstatusName" ColumnName="CurstatusName" />
+                <ScalarProperty Name="CurstatusID" ColumnName="CurstatusID" />
+                <ScalarProperty Name="IsSpecialCase" ColumnName="IsSpecialCase" />
+                <ScalarProperty Name="ProcessKey" ColumnName="ProcessKey" />
+                <ScalarProperty Name="CreateUserName" ColumnName="CreateUserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_Flow_Trade">
+            <EntityTypeMapping TypeName="CTMMISModel.t_Flow_Trade">
+              <MappingFragment StoreEntitySet="t_Flow_Trade">
+                <ScalarProperty Name="TradeId" ColumnName="TradeId" />
+                <ScalarProperty Name="RootId" ColumnName="RootId" />
+                <ScalarProperty Name="WfmId" ColumnName="WfmId" />
+                <ScalarProperty Name="TradeType" ColumnName="TradeType" />
+                <ScalarProperty Name="Property" ColumnName="Property" />
+                <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="GotMoneyType" ColumnName="GotMoneyType" />
+                <ScalarProperty Name="GotMoney" ColumnName="GotMoney" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="CompactDate" ColumnName="CompactDate" />
+                <ScalarProperty Name="ClientCommType" ColumnName="ClientCommType" />
+                <ScalarProperty Name="ClientComm" ColumnName="ClientComm" />
+                <ScalarProperty Name="ClientPreDate" ColumnName="ClientPreDate" />
+                <ScalarProperty Name="HostCommType" ColumnName="HostCommType" />
+                <ScalarProperty Name="HostComm" ColumnName="HostComm" />
+                <ScalarProperty Name="HostPreDate" ColumnName="HostPreDate" />
+                <ScalarProperty Name="NonCorpIncomeType" ColumnName="NonCorpIncomeType" />
+                <ScalarProperty Name="NonCorpIncome" ColumnName="NonCorpIncome" />
+                <ScalarProperty Name="RealPayoutType" ColumnName="RealPayoutType" />
+                <ScalarProperty Name="RealPayout" ColumnName="RealPayout" />
+                <ScalarProperty Name="CorpIncomeType" ColumnName="CorpIncomeType" />
+                <ScalarProperty Name="CorpIncome" ColumnName="CorpIncome" />
+                <ScalarProperty Name="TaxType" ColumnName="TaxType" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="AnJieMoney" ColumnName="AnJieMoney" />
+                <ScalarProperty Name="LawMoney" ColumnName="LawMoney" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StateFlag" ColumnName="StateFlag" />
+                <ScalarProperty Name="recording_time" ColumnName="recording_time" />
+                <ScalarProperty Name="updated_time" ColumnName="updated_time" />
+                <ScalarProperty Name="OverType" ColumnName="OverType" />
+                <ScalarProperty Name="OverMoneyType" ColumnName="OverMoneyType" />
+                <ScalarProperty Name="OverMoney" ColumnName="OverMoney" />
+                <ScalarProperty Name="ChangeCause" ColumnName="ChangeCause" />
+                <ScalarProperty Name="discountCause" ColumnName="discountCause" />
+                <ScalarProperty Name="NonCorpIncomeType2" ColumnName="NonCorpIncomeType2" />
+                <ScalarProperty Name="NonCorpIncome2" ColumnName="NonCorpIncome2" />
+                <ScalarProperty Name="RealPayoutType2" ColumnName="RealPayoutType2" />
+                <ScalarProperty Name="RealPayout2" ColumnName="RealPayout2" />
+                <ScalarProperty Name="Tax2" ColumnName="Tax2" />
+                <ScalarProperty Name="TaxType2" ColumnName="TaxType2" />
+                <ScalarProperty Name="NonCorpIncomeType3" ColumnName="NonCorpIncomeType3" />
+                <ScalarProperty Name="NonCorpIncome3" ColumnName="NonCorpIncome3" />
+                <ScalarProperty Name="RealPayoutType3" ColumnName="RealPayoutType3" />
+                <ScalarProperty Name="RealPayout3" ColumnName="RealPayout3" />
+                <ScalarProperty Name="TaxType3" ColumnName="TaxType3" />
+                <ScalarProperty Name="Tax3" ColumnName="Tax3" />
+                <ScalarProperty Name="CooprateAmount" ColumnName="CooprateAmount" />
+                <ScalarProperty Name="CooprateType" ColumnName="CooprateType" />
+                <ScalarProperty Name="ZJAmount" ColumnName="ZJAmount" />
+                <ScalarProperty Name="ZJType" ColumnName="ZJType" />
+                <ScalarProperty Name="cashRule" ColumnName="cashRule" />
+                <ScalarProperty Name="cashAmount" ColumnName="cashAmount" />
+                <ScalarProperty Name="areaDirector" ColumnName="areaDirector" />
+                <ScalarProperty Name="ChangeType" ColumnName="ChangeType" />
+                <ScalarProperty Name="PRootid" ColumnName="PRootid" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="ZPriceType" ColumnName="ZPriceType" />
+                <ScalarProperty Name="ZPrice" ColumnName="ZPrice" />
+                <ScalarProperty Name="IsLast" ColumnName="IsLast" />
+                <ScalarProperty Name="IsRpt" ColumnName="IsRpt" />
+                <ScalarProperty Name="IsClear" ColumnName="IsClear" />
+                <ScalarProperty Name="IsNewHome" ColumnName="IsNewHome" />
+                <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+                <ScalarProperty Name="EarnestDate" ColumnName="EarnestDate" />
+                <ScalarProperty Name="JuJian" ColumnName="JuJian" />
+                <ScalarProperty Name="JuJianCode" ColumnName="JuJianCode" />
+                <ScalarProperty Name="NoJuJianReason" ColumnName="NoJuJianReason" />
+                <ScalarProperty Name="mandate" ColumnName="mandate" />
+                <ScalarProperty Name="ConnectFile" ColumnName="ConnectFile" />
+                <ScalarProperty Name="YSHouse" ColumnName="YSHouse" />
+                <ScalarProperty Name="ConnectDate" ColumnName="ConnectDate" />
+                <ScalarProperty Name="CertifeDate" ColumnName="CertifeDate" />
+                <ScalarProperty Name="CommMoney" ColumnName="CommMoney" />
+                <ScalarProperty Name="AnJieMoneyRate" ColumnName="AnJieMoneyRate" />
+                <ScalarProperty Name="TotalPercent" ColumnName="TotalPercent" />
+                <ScalarProperty Name="TotalNum" ColumnName="TotalNum" />
+                <ScalarProperty Name="TotalComm" ColumnName="TotalComm" />
+                <ScalarProperty Name="TotalAchive" ColumnName="TotalAchive" />
+                <ScalarProperty Name="TotalCommPercent" ColumnName="TotalCommPercent" />
+                <ScalarProperty Name="HostCommChange" ColumnName="HostCommChange" />
+                <ScalarProperty Name="ClientCommChange" ColumnName="ClientCommChange" />
+                <ScalarProperty Name="DiscountChange" ColumnName="DiscountChange" />
+                <ScalarProperty Name="CommMoneyChange" ColumnName="CommMoneyChange" />
+                <ScalarProperty Name="CorpIncomeChange" ColumnName="CorpIncomeChange" />
+                <ScalarProperty Name="AnJieMoneyChange" ColumnName="AnJieMoneyChange" />
+                <ScalarProperty Name="AnJieMoneyRateChange" ColumnName="AnJieMoneyRateChange" />
+                <ScalarProperty Name="ZYReason" ColumnName="ZYReason" />
+                <ScalarProperty Name="ContractPer" ColumnName="ContractPer" />
+                <ScalarProperty Name="PercentChange" ColumnName="PercentChange" />
+                <ScalarProperty Name="IsLock" ColumnName="IsLock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
