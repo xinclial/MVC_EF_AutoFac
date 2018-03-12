@@ -37,6 +37,7 @@ namespace CTMMIS.DAL
             //    dbContext.Set<T>().Remove(t);
             //    return dbContext.SaveChanges() > 0;
             //}
+            int yy = 90;
             dbContext.Set<T>().Remove(t);
             return dbContext.SaveChanges() > 0;
 
